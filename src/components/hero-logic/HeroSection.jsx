@@ -1,7 +1,7 @@
 import React from "react";
 import useResponsive3D from "../../hooks/card-3d/useResponsive3D.jsx";
 import HeroCanvas from "./HeroCanvas";
-import HeroText from "../sections/00-sections.jsx";
+import HeroText from "../sections/00Sections.jsx";
 import LoadingThreeDotsJumping from "../../effects/LoadingDots.jsx";
 
 export default function HeroSection() {

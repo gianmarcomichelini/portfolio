@@ -1,13 +1,96 @@
+"use strict";
 
+const imagePath = "/skills_logos/";
 
 const userInfo = {
     nameAndSurname: {
         firstName: 'Gianmarco',
         lastName: 'Michelini'
+    },
+
+    educationData: [
+        {
+            year: "September 2024 - Present",
+            location: "Turin, Italy",
+            title: "Master’s Degree in Cybersecurity",
+            institution: "Polytechnic University of Turin",
+            description: "Specializing in network security, vulnerability assessment, and the implementation of defensive strategies for secure system design."
+        },
+        {
+            year: "September 2021 - September 2024",
+            location: "Modena, Italy",
+            title: "Bachelor’s Degree in Computer Engineering",
+            institution: "University of Modena and Reggio Emilia",
+            description: ""
+        },
+        {
+            year: "September 2019 - May 2020",
+            location: "Soest, Germany",
+            title: "International Exchange Program",
+            institution: "Conrad Von Soest Gymnasium",
+            description: ""
+        },
+        {
+            year: "September 2016 - June 2021",
+            location: "Modena, Italy",
+            title: "High School Diploma",
+            institution: "L.S.S.A. Fermo Corni",
+            description: ""
+        }
+    ],
+
+    skillsData: {
+        "Languages & Markup": [
+            { name: "Python", logo: `${imagePath}python.svg`, color: "#3776AB" },
+            { name: "C", logo: `${imagePath}c.svg`, color: "#A8B9CC" },
+            { name: "Java", logo: `${imagePath}java.svg`, color: "#006394" },
+            { name: "Bash", logo: `${imagePath}bash.svg`, color: "#4EAA25" },
+            { name: "JavaScript", logo: `${imagePath}javascript.svg`, color: "#F7DF1E" },
+            { name: "HTML5", logo: `${imagePath}html5.svg`, color: "#E44D26" },
+            { name: "CSS", logo: `${imagePath}css.svg`, color: "#264DE4" },
+            { name: "LaTeX", logo: `${imagePath}latex.svg`, color: "#008080" }
+        ],
+        "Frameworks & Libraries": [
+            { name: "React", logo: `${imagePath}react.svg`, color: "#61DAFB" },
+            { name: "Node.js", logo: `${imagePath}nodedotjs.svg`, color: "#339933" },
+            { name: "Tailwind CSS", logo: `${imagePath}tailwindcss.svg`, color: "#06B6D4" },
+            { name: "Django", logo: `${imagePath}django.svg`, color: "#A81325" },
+            { name: "Express", logo: `${imagePath}express.svg`, color: "#000000" }
+        ],
+        "Tools & DevOps": [
+            { name: "Git", logo: `${imagePath}git.svg`, color: "#F05032" },
+            { name: "GitHub", logo: `${imagePath}github.svg`, color: "#181717" },
+            { name: "Docker", logo: `${imagePath}docker.svg`, color: "#2496ED" },
+            { name: "SQLite", logo: `${imagePath}sqlite.svg`, color: "#003B57" },
+            { name: "Wireshark", logo: `${imagePath}wireshark.svg`, color: "#1679A7" }
+
+        ],
+        "IDEs & Editors": [
+            { name: "IntelliJ IDEA", logo: `${imagePath}intellijidea.svg`, color: "#000000" },
+            { name: "PyCharm", logo: `${imagePath}pycharm.svg`, color: "#31A8FF" },
+            { name: "WebStorm", logo: `${imagePath}webstorm.svg`, color: "#2291D7" },
+            { name: "CLion", logo: `${imagePath}clion.svg`, color: "#2445D7" },
+            { name: "vscode", logo: `${imagePath}vscode.svg`, color: "#06A4D4" },
+        ],
+        "Operating Systems": [
+            { name: "Linux", logo: `${imagePath}linux.svg`, color: "#FCC624" },
+            { name: "Windows", logo: `${imagePath}windows.svg`, color: "#0078D6" },
+            { name: "macOS", logo: `${imagePath}macos.svg`, color: "#000000" },
+            { name: "Bash", logo: `${imagePath}bash.svg`, color: "#4EAA25" }
+        ],
+        "Productivity": [
+            { name: "Notion", logo: `${imagePath}notion.svg`, color: "#000000" },
+            { name: "Figma", logo: `${imagePath}figma.svg`, color: "#F24E1E" },
+            { name: "Word", logo: `${imagePath}word.svg`, color: "#2B579A" },
+            { name: "Excel", logo: `${imagePath}excel.svg`, color: "#217346" },
+            { name: "PowerPoint", logo: `${imagePath}powerpoint.svg`, color: "#B7472A" }
+        ],
+        "Audio Software": [
+            { name: "FL Studio", logo: `${imagePath}flstudio.png`, color: "#F57F17" },
+            { name: "Ableton", logo: `${imagePath}ableton.svg`, color: "#000000" },
+            { name: "Logic Pro X", logo: `${imagePath}logicprox.webp`, color: "#222222" }
+        ]
     }
-}
+};
 
-
-
-
-export {userInfo}
+export { userInfo };

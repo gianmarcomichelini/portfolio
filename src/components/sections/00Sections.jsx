@@ -1,6 +1,7 @@
 import React from "react";
-import IntroSection from "./01-introduction.jsx";
-import EducationSection from "./education.jsx";
+import IntroSection from "./01Introduction.jsx";
+import EducationSection from "./Education.jsx";
+import SkillsSection from "./skills/Skills.jsx";
 
 
 export default function HeroText() {
@@ -8,6 +9,7 @@ export default function HeroText() {
         <div className="min-h-screen bg-background text-primary">
             <IntroSection />
             <EducationSection />
+            <SkillsSection />
         </div>
     );
 }

@@ -3,7 +3,6 @@ import { forwardRef } from 'react'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
 import {Center, Resize, Text3D, useTexture} from "@react-three/drei";
 import portraitTextureImage from '../../assets/badge/portrait-image.svg'
-import fontUrl from '../../assets/badge/font.json'
 import personalFont from '../../assets/badge/font.json'
 import BadgeTexture from "./BadgeTexture.jsx";
 import badgeTexture from "../../assets/badge/badge-texture.jpg";
@@ -63,6 +62,26 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                         side={THREE.DoubleSide}
                     />
                 </mesh>
+
+
+                <group scale={[0.04, 0.04, 0.01]} position={[0, 0, 0]}>
+                    <Text3D
+                        font={personalFont}
+                        position={[-8.3, 23.8, 1]} // scaled coordinates
+                    >
+                        Gianmarco
+                        <meshStandardMaterial color="black" />
+                    </Text3D>
+                    <Text3D
+                        font={personalFont}
+                        position={[-8.3, 22, 1]} // adjust to match line spacing
+                    >
+                        Michelini
+                        <meshStandardMaterial color="black" />
+                    </Text3D>
+                </group>
+
+
 
                 {/* Clip & Clamp */}
                 <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
