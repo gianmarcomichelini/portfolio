@@ -14,7 +14,10 @@ export default function HeroCanvas({ setIsReady, isReady }) {
             <Canvas
                 ref={canvasRef}
                 camera={{ position: [0, 0, 13], fov: 25}}
-                style={{ visibility: isReady ? "visible" : "hidden" }}
+                style={{
+                    backgroundColor: "transparent",
+                    visibility: isReady ? "visible" : "hidden",
+                }}
             >
                 <Suspense fallback={null}>
                     <ambientLight intensity={Math.PI} />

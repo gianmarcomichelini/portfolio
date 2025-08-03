@@ -3,9 +3,9 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useState } from 'react'
 import { useRopeJoint, useSphericalJoint } from '@react-three/rapier'
 import { useGLTF, useTexture } from '@react-three/drei'
-import tagGlb from '../../assets/badge/tag.glb?url'
-import bandTextureImage from '../../assets/badge/band-texture.png?url'
-import badgeTextureFile from '../../assets/badge/badge-texture.jpg?url'
+import tagGlb from '/badge/tag.glb?url'
+import bandTextureImage from '/badge/band-texture.png'
+import badgeTextureFile from '/badge/badge-texture.jpeg'
 
 export default function useBandLogic({ fixed, j1, j2, j3, card, maxSpeed, minSpeed, bandRef }) {
     const { nodes, materials } = useGLTF(tagGlb)

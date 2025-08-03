@@ -24,13 +24,7 @@ export default function EducationSection() {
 
     return (
         <section className="relative py-24 px-4 sm:px-12 font-lunasima bg-background overflow-hidden">
-            {/* background glow */}
-            <div
-                className="absolute inset-0 pointer-events-none opacity-10 blur-3xl"
-                style={{
-                    background: "radial-gradient(circle at 40% 30%, #4F46E533 0%, transparent 70%)",
-                }}
-            />
+
 
             <div className="relative z-10 max-w-7xl mx-auto text-center mb-14">
                 <motion.h2
@@ -72,7 +66,7 @@ export default function EducationSection() {
                                         viewport={{ once: true, amount: 0.5 }}
                                     >
                                         <p className="text-sm text-secondary font-mono">{year}</p>
-                                        <p className="text-sm text-secondary italic mb-2">{location}</p>
+                                        <p className="text-md text-secondary italic mb-2">{location}</p>
                                         <p className="text-2xl font-semibold mb-1">
                                             <span className="bg-gradient-to-br from-gradientTextStart to-gradientTextEnd bg-clip-text text-transparent">
                                                 {title}
@@ -97,7 +91,7 @@ export default function EducationSection() {
                             className="hidden sm:block absolute left-1/2 -translate-x-1/2 border-l-[3px] border-dashed border-secondary"
                             style={{
                                 top: timelineHeight + 3 + "px",
-                                height: "150px",
+                                height: "60px",
                             }}
                         />
                     )}

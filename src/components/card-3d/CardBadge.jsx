@@ -2,16 +2,17 @@ import * as THREE from 'three'
 import { forwardRef } from 'react'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
 import {Center, Resize, Text3D, useTexture} from "@react-three/drei";
-import portraitTextureImage from '../../assets/badge/portrait-image.svg'
-import personalFont from '../../assets/badge/font.json'
-import BadgeTexture from "./BadgeTexture.jsx";
-import badgeTexture from "../../assets/badge/badge-texture.jpg";
-import badgeFrontTexture from "../../assets/badge/front-badge-image.png";
+import portraitTextureImage from '/badge/portrait-image.svg'
+import personalFont from '/badge/font.json?url'
+import badgeTextureImage from "/badge/badge-texture.jpeg";
+import badgeFrontImageTextureImage from "/badge/badge-front-image.png";
+import badgeFrontTextureImage from "/badge/badge-front-texture.jpeg";
 
 const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: propBadgeTexture, hovered, dragged, handlePointer }, ref) => { // Renamed badgeTexture prop
     const portraitTexture = useTexture(portraitTextureImage)
-    const portraitFrontTexture = useTexture(badgeFrontTexture)
-    const mainBadgeTexture = useTexture(badgeTexture); // Assuming this is for the main badge texture
+    const portraitFrontTexture = useTexture(badgeFrontImageTextureImage)
+    const badgeFrontTexture = useTexture(badgeFrontTextureImage)
+    const mainBadgeTexture = useTexture(badgeTextureImage);
 
     return (
         <RigidBody
@@ -36,13 +37,19 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 <mesh geometry={nodes.card.geometry}>
                     <meshPhysicalMaterial
                         clearcoat={1}
-                        roughness={0.3}
-                        metalness={0.5}
                         map={mainBadgeTexture} // Use the loaded texture
                     />
                 </mesh>
 
-                <mesh position={[0, 0.5, 0]} scale={[0.3, 0.3, 1]}>
+                <mesh geometry={nodes.card.geometry} scale={[1, 1, 1]} position={[0, 0, 0.01]}>
+                    <meshPhysicalMaterial
+                        clearcoat={1}
+                        map={badgeFrontTexture}
+                    />
+                </mesh>
+
+                {/* back side */}
+                <mesh position={[0, 0.5, -0.01]} scale={[0.3, 0.3, 1]}>
                     <planeGeometry args={[1, 1]} />
                     <meshBasicMaterial
                         map={portraitTexture}
@@ -52,32 +59,35 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                     />
                 </mesh>
 
-
-                <mesh position={[0, 0.318, 0.01]} scale={[0.6, 0.6, 1]}>
+                {/* front side */}
+                <mesh position={[-0.03, 0.525, 0.02]} scale={[1, 1, 1]}>
                     <planeGeometry args={[1, 1]} />
                     <meshBasicMaterial
                         map={portraitFrontTexture}
                         transparent={true}
-                        alphaTest={1}
                         side={THREE.DoubleSide}
                     />
                 </mesh>
 
 
-                <group scale={[0.04, 0.04, 0.01]} position={[0, 0, 0]}>
+
+
+                <group scale={[0.04, 0.04, 0.02]} position={[0, 0, 0]}>
                     <Text3D
                         font={personalFont}
-                        position={[-8.3, 23.8, 1]} // scaled coordinates
+                        position={[-6.5, 23.8, 1]} // scaled coordinates
                     >
                         Gianmarco
-                        <meshStandardMaterial color="black" />
+                        <meshStandardMaterial color="#814ca7" />
                     </Text3D>
+
+
                     <Text3D
                         font={personalFont}
-                        position={[-8.3, 22, 1]} // adjust to match line spacing
+                        position={[1, 23.8, 1]} // adjust to match line spacing
                     >
                         Michelini
-                        <meshStandardMaterial color="black" />
+                        <meshStandardMaterial color="#814ca7" />
                     </Text3D>
                 </group>
 

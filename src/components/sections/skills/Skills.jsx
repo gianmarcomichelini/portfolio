@@ -6,21 +6,6 @@ import SkillKeycap from "./SkillKeycap.jsx";
 export default function SkillsSection() {
     const groupedSkills = userInfo.skillsData || {};
 
-    const columns = {
-        base: 2,
-        sm: 3,
-        md: 4,
-        lg: 6,
-        xl: 11
-    };
-
-    const gridColumnClasses = `
-        grid-cols-${columns.base}
-        sm:grid-cols-${columns.sm}
-        md:grid-cols-${columns.md}
-        lg:grid-cols-${columns.lg}
-        xl:grid-cols-${columns.xl}
-    `;
 
     const containerVariants = {
         hidden: {},
@@ -86,10 +71,11 @@ export default function SkillsSection() {
                             {section}
                         </motion.h3>
 
-                        <div className={`grid ${gridColumnClasses} gap-x-2 gap-y-4 justify-items-center`}>
+                        <div
+                            className="grid grid-cols-[repeat(auto-fit,minmax(6rem,6rem))] gap-x-5 gap-y-6 justify-items-left">
                             {skills.map(skill => (
                                 <motion.div key={skill.name} variants={itemVariants}>
-                                    <SkillKeycap skill={skill} />
+                                    <SkillKeycap skill={skill}/>
                                 </motion.div>
                             ))}
                         </div>

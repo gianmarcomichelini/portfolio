@@ -10,8 +10,8 @@ function BasicLayout() {
     const backgroundColor = "bg-background";
 
     return (
-        <div>
-            <main className={`${backgroundColor} w-screen min-h-screen`}>
+        <div className={`${backgroundColor} w-screen min-h-screen`}>
+            <main>
                 <Outlet/>
             </main>
         </div>

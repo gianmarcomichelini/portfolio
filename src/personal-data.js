@@ -41,11 +41,11 @@ const userInfo = {
 
     skillsData: {
         "Languages & Markup": [
-            { name: "Python", logo: `${imagePath}python.svg`, color: "#3776AB" },
             { name: "C", logo: `${imagePath}c.svg`, color: "#A8B9CC" },
-            { name: "Java", logo: `${imagePath}java.svg`, color: "#006394" },
-            { name: "Bash", logo: `${imagePath}bash.svg`, color: "#4EAA25" },
+            { name: "Python", logo: `${imagePath}python.svg`, color: "#3776AB" },
             { name: "JavaScript", logo: `${imagePath}javascript.svg`, color: "#F7DF1E" },
+            { name: "Bash", logo: `${imagePath}bash.svg`, color: "#4EAA25" },
+            { name: "Java", logo: `${imagePath}java.svg`, color: "#006394" },
             { name: "HTML5", logo: `${imagePath}html5.svg`, color: "#E44D26" },
             { name: "CSS", logo: `${imagePath}css.svg`, color: "#264DE4" },
             { name: "LaTeX", logo: `${imagePath}latex.svg`, color: "#008080" }
@@ -53,30 +53,30 @@ const userInfo = {
         "Frameworks & Libraries": [
             { name: "React", logo: `${imagePath}react.svg`, color: "#61DAFB" },
             { name: "Node.js", logo: `${imagePath}nodedotjs.svg`, color: "#339933" },
-            { name: "Tailwind CSS", logo: `${imagePath}tailwindcss.svg`, color: "#06B6D4" },
-            { name: "Django", logo: `${imagePath}django.svg`, color: "#A81325" },
-            { name: "Express", logo: `${imagePath}express.svg`, color: "#000000" }
+            { name: "Next.js", logo: `${imagePath}nextdotjs.svg`, color: "#000000" },
+            { name: "FastAPI", logo: `${imagePath}fastapi.svg`, color: "#009688" },
+            { name: "Django", logo: `${imagePath}django.svg`, color: "#092E20" },
+            { name: "Express", logo: `${imagePath}express.svg`, color: "#404D59" },
         ],
         "Tools & DevOps": [
             { name: "Git", logo: `${imagePath}git.svg`, color: "#F05032" },
             { name: "GitHub", logo: `${imagePath}github.svg`, color: "#181717" },
-            { name: "Docker", logo: `${imagePath}docker.svg`, color: "#2496ED" },
+            { name: "Docker", logo: `${imagePath}docker.svg`, color: "#0db7ed" },
             { name: "SQLite", logo: `${imagePath}sqlite.svg`, color: "#003B57" },
-            { name: "Wireshark", logo: `${imagePath}wireshark.svg`, color: "#1679A7" }
-
+            { name: "Wireshark", logo: `${imagePath}wireshark.svg`, color: "#1679A7" },
+            { name: "Vite", logo: `${imagePath}vite.svg`, color: "#646CFF" },
         ],
         "IDEs & Editors": [
             { name: "IntelliJ IDEA", logo: `${imagePath}intellijidea.svg`, color: "#000000" },
-            { name: "PyCharm", logo: `${imagePath}pycharm.svg`, color: "#31A8FF" },
-            { name: "WebStorm", logo: `${imagePath}webstorm.svg`, color: "#2291D7" },
-            { name: "CLion", logo: `${imagePath}clion.svg`, color: "#2445D7" },
-            { name: "vscode", logo: `${imagePath}vscode.svg`, color: "#06A4D4" },
+            { name: "PyCharm", logo: `${imagePath}pycharm.svg`, color: "#32C3FA" },
+            { name: "CLion", logo: `${imagePath}clion.svg`, color: "#2F5DDE" },
+            { name: "WebStorm", logo: `${imagePath}webstorm.svg`, color: "#2489CA" },
+            { name: "vscode", logo: `${imagePath}vscode.svg`, color: "#007ACC" },
         ],
         "Operating Systems": [
             { name: "Linux", logo: `${imagePath}linux.svg`, color: "#FCC624" },
             { name: "Windows", logo: `${imagePath}windows.svg`, color: "#0078D6" },
-            { name: "macOS", logo: `${imagePath}macos.svg`, color: "#000000" },
-            { name: "Bash", logo: `${imagePath}bash.svg`, color: "#4EAA25" }
+            { name: "macOS", logo: `${imagePath}macos.svg`, color: "#666666" },
         ],
         "Productivity": [
             { name: "Notion", logo: `${imagePath}notion.svg`, color: "#000000" },
@@ -88,7 +88,7 @@ const userInfo = {
         "Audio Software": [
             { name: "FL Studio", logo: `${imagePath}flstudio.png`, color: "#F57F17" },
             { name: "Ableton", logo: `${imagePath}ableton.svg`, color: "#000000" },
-            { name: "Logic Pro X", logo: `${imagePath}logicprox.webp`, color: "#222222" }
+            { name: "Logic Pro", logo: `${imagePath}logicprox.webp`, color: "#1D1D1F" }
         ]
     }
 };
