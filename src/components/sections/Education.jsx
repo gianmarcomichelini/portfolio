@@ -24,8 +24,6 @@ export default function EducationSection() {
 
     return (
         <section className="relative py-24 px-4 sm:px-12 font-lunasima bg-background overflow-hidden">
-
-
             <div className="relative z-10 max-w-7xl mx-auto text-center mb-14">
                 <motion.h2
                     className="text-5xl font-extrabold text-transparent bg-clip-text bg-text_gradient"
@@ -39,15 +37,14 @@ export default function EducationSection() {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-                {/* Outer wrapper for timeline content and lines */}
                 <div className="relative" style={{ minHeight: `${timelineHeight}px` }}>
-                    {/* Solid timeline line */}
+                    {/* Vertical solid line (visible only on sm+) */}
                     <div
-                        className="absolute left-1/2 top-0 -translate-x-1/2 w-[3px] bg-secondary rounded z-0 hidden sm:block"
+                        className="hidden sm:block absolute left-1/2 top-0 -translate-x-1/2 w-[3px] bg-secondary rounded z-0"
                         style={{ height: `${timelineHeight}px` }}
                     />
 
-                    {/* Timeline content (cards) */}
+                    {/* Education timeline content */}
                     <div ref={timelineContainerRef} className="flex flex-col space-y-20 relative">
                         {educationData.map(({ year, title, institution, description, location }, index) => {
                             const isLeft = index % 2 === 0;
@@ -76,16 +73,18 @@ export default function EducationSection() {
                                         <p className="text-base text-textLight leading-relaxed">{description}</p>
                                     </motion.div>
 
-                                    {/* Center timeline circle for sm+ */}
-                                    <div
-                                        className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-gradientTextStart to-gradientTextEnd rounded-full border-4 border-background z-20"
-                                    />
+                                    {/* Dot on the center line (only on sm+) */}
+                                    {index !== educationData.length - 1 && (
+                                        <div
+                                            className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-gradientTextStart to-gradientTextEnd rounded-full border-4 border-background z-20"
+                                        />
+                                    )}
                                 </div>
                             );
                         })}
                     </div>
 
-                    {/* Dashed line extension */}
+                    {/* Dashed timeline extension below the content (only on sm+) */}
                     {educationData.length > 0 && (
                         <div
                             className="hidden sm:block absolute left-1/2 -translate-x-1/2 border-l-[3px] border-dashed border-secondary"
