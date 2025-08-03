@@ -1,4 +1,4 @@
-# Developer Portfolio
+# `Developer Portfolio`
 
 Welcome to my personal portfolio! This site showcases my journey, skills, and projects as a Cybersecurity Specialist and Full-Stack Developer. It is built using modern web technologies to ensure a performant, interactive, and responsive user experience.
 
