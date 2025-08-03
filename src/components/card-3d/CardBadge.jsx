@@ -75,7 +75,7 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 <group scale={[0.04, 0.04, 0.02]} position={[0, 0, 0]}>
                     <Text3D
                         font={personalFont}
-                        position={[-6.5, 23.8, 1]} // scaled coordinates
+                        position={[-7, 23.8, 1]} // scaled coordinates
                     >
                         Gianmarco
                         <meshStandardMaterial color="#814ca7" />
@@ -84,7 +84,7 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
 
                     <Text3D
                         font={personalFont}
-                        position={[1, 23.8, 1]} // adjust to match line spacing
+                        position={[1.5, 23.8, 1]} // adjust to match line spacing
                     >
                         Michelini
                         <meshStandardMaterial color="#814ca7" />

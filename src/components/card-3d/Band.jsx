@@ -66,7 +66,7 @@ export default function Band({ maxSpeed = 50, minSpeed = 10, onReady }) {
                     rotation={[0, 0, 0]}
                 >
                     [3D Interactive Badge]
-                    <meshStandardMaterial color="#9CA3AF" />
+                    <meshStandardMaterial color="#936bdb" />
                 </Text3D>
 
             </group>
