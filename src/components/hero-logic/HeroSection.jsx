@@ -15,7 +15,7 @@ export default function HeroSection() {
                     {!is3DContentReady && (
                         <div className="fixed inset-0 flex flex-col justify-center items-center z-50 bg-background bg-opacity-80 space-y-4">
                             <img
-                                src="/images/avatar.png"
+                                src="/portfolio/images/avatar.png"
                                 alt="Loading avatar"
                                 className="w-24 h-24 rounded-full border-2 border-primary shadow-lg select-none"
                             />

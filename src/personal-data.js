@@ -1,6 +1,6 @@
 "use strict";
 
-const imagePath = "/skills_logos/";
+const imagePath = "/portfolio/skills_logos/";
 
 const userInfo = {
     nameAndSurname: {

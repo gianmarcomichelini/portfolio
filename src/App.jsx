@@ -10,7 +10,7 @@ export default function App() {
     return (
         <Routes>
 
-            <Route path="/" element={<BasicLayout />}>
+            <Route path="/portfolio" element={<BasicLayout />}>
                 <Route index element={<HeroSection/>}/>
                 <Route path="reach-me" element={<ContactComponent/>}/>
 

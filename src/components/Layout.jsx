@@ -27,7 +27,7 @@ function DefaultRoute() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowModal(false);
-            navigate("/");
+            navigate("/portfolio");
         }, 2500);
         return () => clearTimeout(timer);
     }, [navigate]);
@@ -45,7 +45,7 @@ function DefaultRoute() {
                         <p className="text-lg opacity-90 mb-6">Redirecting to home...</p>
                             </div >
                         <div className="flex justify-end">
-                            <Link to="/" className="inline-block">
+                            <Link to="/portfolio" className="inline-block">
                                 <button className="px-5 py-2 rounded-full bg-white/20 hover:bg-white/30 text-white font-semibold transition duration-200">
                                     Go Home
                                 </button>
