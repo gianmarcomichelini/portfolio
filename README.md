@@ -37,8 +37,8 @@ Open a terminal and run the following commands:
 ### Clone the repository
 
 ```bash, aiignore
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/gianmarcomichelini/portfolio.git
+cd portfolio
 ```
 
 ### Install dependencies
