@@ -4,7 +4,7 @@ import BandLine from './BandLine';
 import RigidBodyChain from './RigidBodyChain';
 import CardBadge from './CardBadge';
 import useBandLogic from '../../hooks/card-3d/UseBandPhysics.js';
-import personalFont from "/badge/font.json?url";
+import personalFont from "/badge/font-description.json?url";
 import { Text3D } from "@react-three/drei";
 
 export default function Band({ maxSpeed = 50, minSpeed = 10, onReady }) {
@@ -56,12 +56,8 @@ export default function Band({ maxSpeed = 50, minSpeed = 10, onReady }) {
                 {/* 3D Text Component */}
                 <Text3D
                     font={personalFont}
-                    size={0.1}
-                    height={0.05}
-                    curveSegments={12}
-                    bevelEnabled
-                    bevelThickness={0.01}
-                    bevelSize={0.001}
+                    size={0.07}
+                    height={0.03}
                     position={[-0.6, -6.7, 0]}
                     rotation={[0, 0, 0]}
                 >

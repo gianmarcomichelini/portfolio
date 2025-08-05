@@ -78,7 +78,7 @@ export default function IntroSection() {
                             text="Gianmarco Michelini"
                             speed={200}
                             maxIterations={10}
-                            characters="?"
+                            characters="*"
                             className="revealed inline-block"
                             parentClassName="all-letters inline-block"
                             encryptedClassName="encrypted"

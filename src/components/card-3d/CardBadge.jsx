@@ -37,7 +37,7 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 <mesh geometry={nodes.card.geometry}>
                     <meshPhysicalMaterial
                         clearcoat={1}
-                        map={mainBadgeTexture} // Use the loaded texture
+                        map={mainBadgeTexture} 
                     />
                 </mesh>
 
@@ -49,7 +49,7 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 </mesh>
 
                 {/* back side */}
-                <mesh position={[0, 0.5, -0.01]} scale={[0.3, 0.3, 1]}>
+                <mesh position={[0, 0.6, -0.01]} scale={[0.3, 0.3, 1]}>
                     <planeGeometry args={[1, 1]} />
                     <meshBasicMaterial
                         map={portraitTexture}
@@ -75,19 +75,19 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 <group scale={[0.04, 0.04, 0.02]} position={[0, 0, 0]}>
                     <Text3D
                         font={personalFont}
-                        position={[-7, 23.8, 1]} // scaled coordinates
+                        position={[-8, 23.8, 1]} // scaled coordinates
                     >
                         Gianmarco
-                        <meshStandardMaterial color="#814ca7" />
+                        <meshStandardMaterial color="white" />
                     </Text3D>
 
 
                     <Text3D
                         font={personalFont}
-                        position={[1.5, 23.8, 1]} // adjust to match line spacing
+                        position={[-8, 22, 1]} // adjust to match line spacing
                     >
                         Michelini
-                        <meshStandardMaterial color="#814ca7" />
+                        <meshStandardMaterial color="white" />
                     </Text3D>
                 </group>
 
