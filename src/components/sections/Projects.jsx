@@ -43,15 +43,6 @@ export default function LatestCreationsSection() {
                 >
                     Latest Creations
                 </motion.h2>
-                <motion.p
-                    className="text-textLight text-base sm:text-lg mt-2 sm:mt-4"
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    (Click to play/pause)
-                </motion.p>
             </div>
 
             <div className="max-w-4xl mx-auto flex flex-col space-y-8 sm:space-y-10">
