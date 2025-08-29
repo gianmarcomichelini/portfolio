@@ -46,7 +46,7 @@ export default function ContactComponent() {
                 </div>
 
                 <motion.button
-                    onClick={() => navigate("/portfolio")}
+                    onClick={() => navigate("/portfolio/")}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="mt-10 px-8 py-2 rounded-xl bg-btngradient_primary text-primary font-semibold text-lg transition-colors hover:bg-btngradient_primary_inverted"

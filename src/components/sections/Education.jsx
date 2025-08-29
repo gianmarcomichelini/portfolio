@@ -23,7 +23,10 @@ export default function EducationSection() {
     }, [educationData]);
 
     return (
-        <section className="relative py-24 px-4 sm:px-12 font-lunasima bg-background overflow-hidden">
+        <section
+            id={"education"}
+            className="relative py-24 px-4 sm:px-12 font-lunasima bg-background overflow-hidden"
+        >
             <div className="relative z-10 max-w-7xl mx-auto text-center mb-14">
                 <motion.h2
                     className="text-5xl font-extrabold text-transparent bg-clip-text bg-text_gradient"
@@ -38,16 +41,24 @@ export default function EducationSection() {
 
             <div className="relative max-w-4xl mx-auto">
                 <div className="relative" style={{ minHeight: `${timelineHeight}px` }}>
-                    {/* Vertical solid line (visible only on sm+) */}
                     <div
                         className="hidden sm:block absolute left-1/2 top-0 -translate-x-1/2 w-[3px] bg-secondary rounded z-0"
                         style={{ height: `${timelineHeight}px` }}
                     />
 
-                    {/* Education timeline content */}
                     <div ref={timelineContainerRef} className="flex flex-col space-y-20 relative">
-                        {educationData.map(({ year, title, institution, description, location }, index) => {
+                        {educationData.map((item, index) => {
+                            if (!item || (!item.year && !item.title && !item.institution && !item.description && !item.location)) {
+                                return null;
+                            }
+
+                            const { year, title, institution, description, location } = item;
                             const isLeft = index % 2 === 0;
+                            const isLast = index === educationData.length - 1;
+
+                            const sentences = description
+                                ? description.split(/\n/).filter(Boolean)
+                                : [];
 
                             return (
                                 <div key={index} className="relative w-full">
@@ -70,21 +81,23 @@ export default function EducationSection() {
                                             </span>
                                         </p>
                                         <h4 className="text-xl font-medium mb-4">{institution}</h4>
-                                        <p className="text-base text-textLight leading-relaxed">{description}</p>
+                                        {sentences.length > 0 && (
+                                            <ul className="text-base text-textLight leading-snug list-none p-0 m-0">
+                                                {sentences.map((sentence, sIndex) => (
+                                                    <li key={sIndex}>{sentence.trim()}</li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </motion.div>
 
-                                    {/* Dot on the center line (only on sm+) */}
-                                    {index !== educationData.length - 1 && (
-                                        <div
-                                            className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-gradientTextStart to-gradientTextEnd rounded-full border-4 border-background z-20"
-                                        />
+                                    {!isLast && (
+                                        <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-gradientTextStart to-gradientTextEnd rounded-full border-4 border-background z-20" />
                                     )}
                                 </div>
                             );
                         })}
                     </div>
 
-                    {/* Dashed timeline extension below the content (only on sm+) */}
                     {educationData.length > 0 && (
                         <div
                             className="hidden sm:block absolute left-1/2 -translate-x-1/2 border-l-[3px] border-dashed border-secondary"

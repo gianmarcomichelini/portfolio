@@ -2,6 +2,7 @@ import DecryptedText from "../../effects/DecryptTextEffect.jsx";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import LookingForInternshipBadge from "../InternshipBadge.jsx"; // Import the new component
 
 export default function IntroSection() {
     const navigate = useNavigate();
@@ -54,6 +55,8 @@ export default function IntroSection() {
 
     return (
         <div className="relative  w-full overflow-hidden">
+            {/* New badge component added here */}
+            <LookingForInternshipBadge />
 
             {/* Main content */}
             <motion.div
@@ -90,7 +93,7 @@ export default function IntroSection() {
                     className="text-lg sm:text-xl md:text-2xl font-semibold text-textLight mb-12 max-w-xl"
                     variants={itemVariants}
                 >
-                    Cybersecurity Specialist focused on secure system design
+                    Cybersecurity Student focused on secure system design
                 </motion.p>
                 <motion.div
                     className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-md sm:max-w-lg justify-center"
@@ -141,7 +144,6 @@ function ScrollCue() {
                 onClick={handleScroll}
                 className="relative w-16 h-16 rounded-full flex items-center justify-center cursor-pointer group focus:outline-none"
             >
-                {/* The glowing, pulsating outer ring */}
                 <motion.div
                     className="absolute inset-0 rounded-full bg-primary/20"
                     animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0] }}
@@ -152,7 +154,6 @@ function ScrollCue() {
                     }}
                 />
 
-                {/* The inner chevron icon with its own bounce */}
                 <motion.div
                     className="relative p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 transition-colors duration-300 group-hover:text-primary group-hover:bg-primary/20"
                     animate={{ y: [0, 4, 0] }}

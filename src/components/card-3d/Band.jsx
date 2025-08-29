@@ -58,11 +58,11 @@ export default function Band({ maxSpeed = 50, minSpeed = 10, onReady }) {
                     font={personalFont}
                     size={0.07}
                     height={0.03}
-                    position={[-0.6, -6.7, 0]}
+                    position={[-0.5, -5.9, -0.3]}
                     rotation={[0, 0, 0]}
                 >
-                    [3D Interactive Badge]
-                    <meshStandardMaterial color="#936bdb" />
+                    {"[Drag & Spin Me!]"}
+                    <meshStandardMaterial color="#d0c5de" />
                 </Text3D>
 
             </group>

@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { forwardRef } from 'react'
 import { RigidBody, CuboidCollider } from '@react-three/rapier'
-import {Center, Resize, Text3D, useTexture} from "@react-three/drei";
+import {Text3D, useTexture} from "@react-three/drei";
 import portraitTextureImage from '/badge/portrait-image.svg'
 import personalFont from '/badge/font.json?url'
 import badgeTextureImage from "/badge/badge-texture.jpeg";
@@ -60,7 +60,7 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
                 </mesh>
 
                 {/* front side */}
-                <mesh position={[-0.03, 0.525, 0.02]} scale={[1, 1, 1]}>
+                <mesh position={[0, 0.425, 0.02]} scale={[0.65, 0.8, 1]}>
                     <planeGeometry args={[1, 1]} />
                     <meshBasicMaterial
                         map={portraitFrontTexture}
@@ -72,24 +72,24 @@ const CardBadge = forwardRef(({ nodes, materials, bandTexture, badgeTexture: pro
 
 
 
-                <group scale={[0.04, 0.04, 0.02]} position={[0, 0, 0]}>
+                {/*<group scale={[0.04, 0.04, 0.02]} position={[0, 0, 0]}>
                     <Text3D
                         font={personalFont}
-                        position={[-8, 23.8, 1]} // scaled coordinates
+                        position={[-8, 23.8, 1]}
                     >
                         Gianmarco
-                        <meshStandardMaterial color="white" />
+                        <meshStandardMaterial color="black" />
                     </Text3D>
 
 
                     <Text3D
                         font={personalFont}
-                        position={[-8, 22, 1]} // adjust to match line spacing
+                        position={[-8, 22, 1]}
                     >
                         Michelini
-                        <meshStandardMaterial color="white" />
+                        <meshStandardMaterial color="black" />
                     </Text3D>
-                </group>
+                </group>*/}
 
 
 
