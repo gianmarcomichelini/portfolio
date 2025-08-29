@@ -6,31 +6,25 @@ export default function LatestCreationsSection() {
     const videoRefs = useRef([]);
     const [playingIndex, setPlayingIndex] = useState(null);
 
-    const handlePlayPause = (index, isHover = false) => {
+    const handleTogglePlayPause = (index) => {
         const video = videoRefs.current[index];
         if (!video) return;
 
-        // Desktop hover: only play on hover, pause on leave if not manually playing
-        if (isHover) {
-            video.play().catch(console.error);
-            return;
+        // Pause the current video and play the new one
+        if (playingIndex !== null && playingIndex !== index) {
+            const prevVideo = videoRefs.current[playingIndex];
+            if (prevVideo) {
+                prevVideo.pause();
+            }
         }
 
-        // Mobile tap or click
-        if (playingIndex === index) {
-            video.pause();
-            setPlayingIndex(null);
-        } else {
-            // Pause previously playing video
-            if (playingIndex !== null) {
-                const prevVideo = videoRefs.current[playingIndex];
-                if (prevVideo) {
-                    prevVideo.pause();
-                    prevVideo.currentTime = 0;
-                }
-            }
+        // Play or pause the clicked video
+        if (video.paused) {
             video.play().catch(console.error);
             setPlayingIndex(index);
+        } else {
+            video.pause();
+            setPlayingIndex(null);
         }
     };
 
@@ -56,7 +50,7 @@ export default function LatestCreationsSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    (Tap to play on mobile, hover on desktop)
+                    (Click to play/pause)
                 </motion.p>
             </div>
 
@@ -84,17 +78,6 @@ export default function LatestCreationsSection() {
                         >
                             {hasVideo && mockupVideo && (
                                 <div
-                                    onMouseEnter={() => handlePlayPause(index, true)}
-                                    onMouseLeave={() => {
-                                        if (playingIndex !== index) {
-                                            const video = videoRefs.current[index];
-                                            if (video) {
-                                                video.pause();
-                                                video.currentTime = 0;
-                                            }
-                                        }
-                                    }}
-                                    onClick={() => handlePlayPause(index)}
                                     className={`relative flex justify-center items-center w-full h-[200px] sm:h-[300px] lg:h-[450px] rounded-xl overflow-hidden cursor-pointer ${mockupImageBorderClass}`}
                                 >
                                     <video
@@ -106,11 +89,17 @@ export default function LatestCreationsSection() {
                                         playsInline
                                         preload="metadata"
                                     />
-                                    {playingIndex !== index && (
-                                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 sm:hidden">
-                                            <span className="text-white text-5xl">▶</span>
-                                        </div>
-                                    )}
+                                    {/* Play/Pause Button - Now "Cooler" */}
+                                    <div className="absolute bottom-4 right-4 z-10">
+                                        <button
+                                            onClick={() => handleTogglePlayPause(index)}
+                                            className="w-14 h-14 rounded-full flex items-center justify-center text-white text-3xl shadow-lg transition-all duration-300
+                                                       backdrop-filter backdrop-blur-sm bg-gradient-to-br from-white/20 to-white/10 border border-white/30
+                                                       hover:scale-110 hover:from-white/30 hover:to-white/20 hover:border-white/50 hover:shadow-2xl"
+                                        >
+                                            {playingIndex === index ? "⏸︎" : "▶︎"}
+                                        </button>
+                                    </div>
                                 </div>
                             )}
 
@@ -118,8 +107,6 @@ export default function LatestCreationsSection() {
                                 <div
                                     className={`relative flex justify-center items-center w-full h-[200px] sm:h-[300px] lg:h-[350px] rounded-xl overflow-hidden ${mockupImageBorderClass}`}
                                 >
-
-
                                     <img
                                         src={mockupImage}
                                         alt={title}
