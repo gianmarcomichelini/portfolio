@@ -54,51 +54,48 @@ export default function LatestCreationsSection() {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
                         >
-                            {(hasVideo && mockupVideo) || (hasImage && mockupImage) ? (
+                            {hasVideo && mockupVideo && (
                                 <div
                                     onMouseEnter={() => {
                                         setHoveredIndex(index);
-                                        if (hasVideo && videoRefs.current[index]) {
+                                        if (videoRefs.current[index]) {
                                             videoRefs.current[index].play().catch(console.error);
                                         }
                                     }}
                                     onMouseLeave={() => {
                                         setHoveredIndex(null);
-                                        if (hasVideo && videoRefs.current[index]) {
+                                        if (videoRefs.current[index]) {
                                             videoRefs.current[index].pause();
                                             videoRefs.current[index].currentTime = 0;
                                         }
                                     }}
-                                    className="w-full mb-4 cursor-pointer relative overflow-hidden group"
-                                    // Removed paddingTop for a flexible layout
+                                    className={`flex rounded-xl overflow-hidden justify-center items-center w-full max-h-[500px] ${mockupImageBorderClass}`}
                                 >
-                                    {hasVideo && mockupVideo && (
-                                        <div className={`flex justify-center items-center w-full max-h-[400px] ${mockupImageBorderClass}`}>
-                                            <video
-                                                ref={(el) => (videoRefs.current[index] = el)}
-                                                src={mockupVideo}
-                                                className="w-full h-auto object-contain"
-                                                muted
-                                                loop
-                                                playsInline
-                                                preload="metadata"
-                                            />
-                                        </div>
-                                    )}
-
-                                    {hasImage && mockupImage && (
-                                        <div className={`flex justify-center items-center w-full max-h-[250px] ${mockupImageBorderClass}`}>
-                                            <img
-                                                src={mockupImage}
-                                                alt={title}
-                                                className="w-full h-auto object-contain"
-                                            />
-                                        </div>
-                                    )}
+                                    <video
+                                        ref={(el) => (videoRefs.current[index] = el)}
+                                        src={mockupVideo}
+                                        className="w-full h-auto object-contain"
+                                        muted
+                                        loop
+                                        playsInline
+                                        preload="metadata"
+                                    />
                                 </div>
-                            ) : null}
+                            )}
 
-                            <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+                            {hasImage && mockupImage && (
+                                <div
+                                    className={`flex rounded-xl overflow-hidden justify-center items-center w-full max-h-[300px] ${mockupImageBorderClass}`}
+                                >
+                                    <img
+                                        src={mockupImage}
+                                        alt={title}
+                                        className="w-full h-auto object-contain"
+                                    />
+                                </div>
+                            )}
+
+                            <h3 className="text-2xl font-semibold my-2">{title}</h3>
                             {description && <p className="text-base text-textLight">{description}</p>}
                         </motion.div>
                     )

@@ -107,7 +107,7 @@ const userInfo = {
 
 
         {
-            title: "Wi-Fi and GNSS reports",
+            title: "Analysis of Wi-Fi and Global Navigation Satellite System Data",
             description: "A two-part research project focused on practical network and security analysis. My team and I performed a Wi-Fi goodput study using professional tools like iperf3 and Wireshark to quantify network performance degradation due to congestion and protocol overhead. We also conducted a GNSS security analysis, processing raw satellite data to assess positioning accuracy under real-world conditions, including simulating a spoofing attack to demonstrate critical vulnerabilities and the importance of signal integrity in navigation systems.",
             hasVideo: false,
             hasImage: true,
