@@ -1,9 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, {useRef } from "react";
 import { motion } from "framer-motion";
 import { userInfo } from "../../personal-data.js";
 
 export default function LatestCreationsSection() {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
     const videoRefs = useRef([]);
 
     return (
@@ -28,7 +27,7 @@ export default function LatestCreationsSection() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    (Hover to play video)
+                    (Hover to play demo)
                 </motion.p>
             </div>
 
@@ -57,13 +56,11 @@ export default function LatestCreationsSection() {
                             {hasVideo && mockupVideo && (
                                 <div
                                     onMouseEnter={() => {
-                                        setHoveredIndex(index);
                                         if (videoRefs.current[index]) {
                                             videoRefs.current[index].play().catch(console.error);
                                         }
                                     }}
                                     onMouseLeave={() => {
-                                        setHoveredIndex(null);
                                         if (videoRefs.current[index]) {
                                             videoRefs.current[index].pause();
                                             videoRefs.current[index].currentTime = 0;
