@@ -111,13 +111,14 @@ export default function IntroSection() {
 
                     <motion.a
                         href="/portfolio/cv.pdf"
-                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-2 rounded-2xl text-lg sm:text-xl font-semibold text-primary bg-btngradient_primary_inverted shadow-md transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-secondary/30 text-center"
                         style={{ color: "#f5f5f5" }}
                         variants={buttonVariants}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Download CV!
+                        View CV
                     </motion.a>
                 </motion.div>
             </motion.div>
